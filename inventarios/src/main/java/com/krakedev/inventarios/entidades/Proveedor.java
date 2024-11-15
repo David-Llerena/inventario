@@ -7,21 +7,6 @@ public class Proveedor {
 	private String telefono;
 	private String correo;
 	private String direccion;
-	
-	public Proveedor(String identificador, String tipoDocumento, String nombre, String telefono, String correo,
-			String direccion) {
-		super();
-		this.identificador = identificador;
-		this.tipoDocumento = tipoDocumento;
-		this.nombre = nombre;
-		this.telefono = telefono;
-		this.correo = correo;
-		this.direccion = direccion;
-	}
-	public Proveedor() {
-		super();
-	}
-	
 	public String getIdentificador() {
 		return identificador;
 	}
@@ -58,7 +43,19 @@ public class Proveedor {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
+	public Proveedor(String identificador, String tipoDocumento, String nombre, String telefono, String correo,
+			String direccion) {
+		super();
+		this.identificador = identificador;
+		this.tipoDocumento = tipoDocumento;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.correo = correo;
+		this.direccion = direccion;
+	}
+	public Proveedor() {
+		super();
+	}
 	
 	
 }

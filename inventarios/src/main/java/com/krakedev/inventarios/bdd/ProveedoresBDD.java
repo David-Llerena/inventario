@@ -33,13 +33,6 @@ public class ProveedoresBDD {
 				String correo=rs.getString("correo");
 				String direccion=rs.getString("ubicacion");
 				
-				System.out.println(identificador);
-				System.out.println(tipo_documento);
-				System.out.println(nombre);
-				System.out.println(telefono);
-				System.out.println(correo);
-				System.out.println(direccion);
-				
 				proveedor = new Proveedor(identificador,tipo_documento,nombre,telefono,correo,direccion);
 				proveedores.add(proveedor);
 			}

@@ -19,6 +19,7 @@ public class PedidosBDD {
 		Connection con = null;
 		PreparedStatement ps = null;
 		PreparedStatement psDet = null;
+		PreparedStatement psHt = null;
 		ResultSet rsClave=null;
 		int codigoCabecera=0;
 		Date fechaActual = new Date();
@@ -57,6 +58,15 @@ public class PedidosBDD {
 				psDet.setBigDecimal(5, subtotal);
 				
 				psDet.executeUpdate();
+				
+				psHt=con.prepareStatement("insert into historial_stock(fecha,producto,referencia,cantidad) "
+						+"values(?,?,?,?); ");
+				psHt.setDate(1,fechaSQL);
+				psHt.setInt(2, det.getProducto().getCodigo());
+				psHt.setString(3,"PEDIDO "+det.getProducto().getCodigo());
+				psHt.setInt(4, det.getCantidadRecibida());
+				
+				psHt.executeUpdate();
 			}		
 		}catch (KrakeDevException e) {
 			e.printStackTrace();

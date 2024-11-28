@@ -3,8 +3,6 @@ package com.krakedev.inventarios.entidades;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.krakedev.inventarios.bdd.EstadoPedido;
-
 public class Pedido {
 	private int codigo;
 	private Proveedor proveedor;
